@@ -3,6 +3,7 @@ import { useRecoilState } from "recoil";
 import { Button } from "../../Components/Button";
 import { PublicKey } from "../../State/App.state";
 const deso = new Deso();
+
 export const Header = () => {
   const [publicKey, setPublicKey] = useRecoilState(PublicKey);
   return (
@@ -23,7 +24,7 @@ export const Header = () => {
             const loggedInUserKey = deso.identity.getUserKey();
             setPublicKey(loggedInUserKey as string);
           }}
-          buttonText="Login"
+          buttonText="Connect Wallet"
         />
       )}
       {publicKey && <div>user: {publicKey}</div>}
